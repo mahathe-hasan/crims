@@ -1,0 +1,249 @@
+/* =====================================================
+   CRIMS Ultimate Dark Theme & Table Borders Fix
+===================================================== */
+
+:root {
+    --bg-body: #0f172a;         
+    --bg-navbar: #1e293b;       
+    --text-main: #f8fafc;       
+    --text-muted: #94a3b8;      
+    --sidebar-bg: linear-gradient(180deg, #1e1b4b 0%, #0f172a 100%);
+    --accent-blue: #3b82f6;     
+}
+
+body {
+    background-color: var(--bg-body) !important;
+    color: var(--text-main) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 270px !important;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--sidebar-bg);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    z-index: 1050;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.sidebar .menu-items {
+    flex-grow: 1;
+    padding: 5px 15px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.sidebar a i {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar a.active {
+    color: #ffffff !important;
+    background-color: var(--accent-blue) !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+
+/* Logout Button */
+.sidebar-footer .logout-btn {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #fca5a5 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.sidebar-footer .logout-btn:hover {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+}
+
+/* Main Content Wrapper */
+.main {
+    margin-left: 270px !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-body);
+}
+
+/* Navbar & Topbar (লেখা সবসময় উজ্জ্বল সাদা নিশ্চিত করা) */
+.topbar, .navbar, nav {
+    background-color: var(--bg-navbar) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.topbar *, .navbar *, nav * {
+    color: #ffffff !important;
+}
+
+/* Cards & Containers */
+.card, .bg-white, .table-responsive {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* =====================================================
+   Table Column & Row Borders (রো এবং কলামের রেখা দৃশ্যমান করা)
+===================================================== */
+.table {
+    color: #f8fafc !important;
+    background-color: #1e293b !important;
+    border-collapse: collapse !important;
+    width: 100%;
+}
+
+.table th, .table td {
+    color: #f8fafc !important;
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important; /* স্পষ্ট বর্ডার রেখা */
+    padding: 12px 15px !important;
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #1a2332 !important;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #172033 !important;
+    color: #f8fafc !important;
+}
+
+/* Search Box / Input Fields (হালকা সাদা প্লেসহোল্ডার ও লেখা) */
+input.form-control, select.form-select, textarea.form-control {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+input.form-control::placeholder, textarea.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important; /* হালকা সাদা */
+}
+
+input.form-control:focus, select.form-select:focus {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+}
+
+/* লোগোর ব্যাকগ্রাউন্ড পারফেক্ট সাদা এবং লেখা সাদা */
+.sidebar .logo {
+    background: transparent !important;
+}
+
+.sidebar .logo .bg-white {
+    background-color: #ffffff !important;
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.sidebar .logo h5, 
+.sidebar .logo small {
+    color: #ffffff !important;
+}
+
+/* =====================================================
+   Mobile Responsive Drawer Settings
+===================================================== */
+@media (max-width: 992px) {
+    .sidebar {
+        left: -270px !important;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .sidebar.active {
+        left: 0 !important;
+    }
+
+    .main {
+        margin-left: 0 !important;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(2px);
+        z-index: 1040;
+        display: none;
+    }
+
+    body.sidebar-open .sidebar-overlay {
+        display: block;
+    }
+}
+
+/* =====================================================
+   Exact Fixes: Menu Icon, Logo Background & Card Boxes
+===================================================== */
+
+/* ১. টপবারের মেনু বাটন বা বক্সের সাদা ব্যাকগ্রাউন্ড রিমুভ করা */
+.topbar .btn, 
+.navbar .btn,
+button.navbar-toggler,
+.navbar-toggler,
+.topbar button {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.topbar .btn:hover, 
+.navbar .btn:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ২. টপবার বা সাইডের লোগোর ব্যাকগ্রাউন্ড সাদা করা এবং ছবির ফিটিং ঠিক রাখা */
+.topbar img, 
+.navbar img,
+.sidebar .logo img {
+    background-color: #ffffff !important;
+    padding: 2px !important;
+    border-radius: 6px !important;
+    object-fit: contain !important;
+}
+
