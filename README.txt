@@ -1,4 +1,4 @@
-# CRIMS Pro v1.0
+# CRIMS Pro v2.0
 
 Class Record & Information Management System
 
